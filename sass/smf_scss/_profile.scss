@@ -1,0 +1,56 @@
+
+/* poster details and list of items */
+.poster {
+	float: left;
+	/* Don't set this in em.It will eat too much space if people need to set large text sizes. */
+	width: 160px;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word; /* IE fallback */
+	overflow-wrap: break-word;
+}
+.poster h4 {
+	font-size: 1.2em;
+}
+.poster h4, .poster h4 a, .poster li:hover h4 a, .poster h4 a:hover .poster li h4 a, .poster h4 a:focus {
+	margin: 0;
+	padding: 0;
+	color: #c06002;
+}
+.postarea, .moderatorbar {
+	margin: 0 0 0 175px;
+}
+
+/* Drop part of QuickButtons */
+.post_options ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: -1px;
+	z-index: 90;
+	padding: 6px;
+	background: #fff;
+	font-weight: normal;
+	text-align: left;
+	border: solid 1px #999;
+	border-left: solid 1px #aaa;
+	border-top: solid 1px #bbb;
+	border-radius: 4px 0 4px 4px;
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.post_options:hover ul {
+	display: block;
+}
+.post_options ul a {
+	display: block;
+	width: 12em;
+	padding: 0 6px;
+	line-height: 2.2em;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+.post_options ul a:hover, .post_options ul a:focus {
+	border-color: #c4cbd3;
+}

@@ -1,0 +1,167 @@
+#mainarea {
+    margin-left: 17px;
+    margin-right: 17px;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-secondary-lighte);
+}
+#mainsag {
+    background: url(../images/theme/left.gif) 100% 0 repeat-y;
+}
+#mainsol {
+    background: url(../images/theme/right.gif) 0 0 repeat-y;
+}
+
+#header_korsanfan{
+    background:url(../images/theme/xxycatbg.jpg) repeat-x;
+    display: flex;
+    justify-content: space-between;
+}
+#logo{
+    width:493px;
+    height:119px;
+    background:url(../images/theme/logo1.gif) no-repeat;
+    display:block;
+}
+.header_alt{
+    background:url(../images/theme/header_lower.gif) repeat-x;
+    height:67px;
+}
+
+.footer_top_korsan {
+    background:url(../images/theme/footer_lower.gif) repeat-x;
+    height:22px;
+}
+#footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background:url(../images/theme/xxycatbg.jpg);
+    > div {min-width:80%;}
+    &::before, &::after {
+        content:"";
+        width:70px;
+        height:49px;
+        display:block;
+    }
+    &::before{
+        background:url(../images/theme/footer_treasure.gif) no-repeat;
+    }
+    &::after{
+        background:url(../images/theme/footer_treasure.gif) no-repeat;
+    }
+    strong {
+        color:var(--color-default-lighte);
+    }
+}
+#top_section {
+    background: var(--color-default) url(../images/theme/xxycatbg.jpg);
+}
+
+#main_menu {
+    background:url(../images/theme/menu_center_part.gif) repeat-x;
+    height:30px;
+    display:flex;
+    line-height:30px;
+    &::before, &::after {
+        content:"";
+        width:19px;
+        height:30px;
+        display:block;
+    }
+    &::before {background:url(../images/theme/menu_left_end.gif);}
+    &::after {background:url(../images/theme/menu_right_end.gif);}
+}
+
+.profile_korsano{
+    margin-left: 17px;
+    margin-right: 17px;
+    position: relative;
+    overflow: hidden;
+    h4{
+        background: url(../images/theme/pprofile_bag.gif) no-repeat;
+        padding-left:15px;
+        height:22px;
+    }
+}
+.profile_sag {
+    background: url(../images/theme/pprofile_left.gif) 100% 0 repeat-y;
+}
+.profile_sol {
+    background: url(../images/theme/pprofile_right.gif) 0 0 repeat-y;
+}
+.profile_top {
+    background: url(../images/theme/pprofile_top.gif) no-repeat;
+    height: 25px;
+}
+.profile_bottom {
+    background: url(../images/theme/pprofile_bottom.gif) no-repeat;
+    height: 21px;
+    margin-top: -3px;
+}
+.poster {
+    width:150px;
+}
+
+.title_bar, h3.titlebg, h4.titlebg, .titlebg, h3.subbg, h4.subbg, .subbg{
+    background-image:url(../images/theme/xxycatbg.jpg);
+}
+div.cat_bar,
+.generic_list_wrapper, .windowbg, .approvebg, .approvebg2 {
+    background-image:url(../images/theme/catbg.jpg);
+}
+#description_board{
+    color:var(--color-default);
+    h3, div {
+        color:var(--color-default-satur);
+    }
+}
+.welcome {
+    color: var(--color-default);
+    strong {color:var(--color-primary);}
+}
+#display_head p{
+    color:var(--color-base);
+}
+
+/* Those collapse and expand icons are wonderful. */
+.toggle_up::before, .toggle_down::before {
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	background: var(--color-primary) url(../images/icons/toggle.png) no-repeat 0 0 / 17px;
+	overflow: hidden;
+	content: "";
+	vertical-align: middle;
+	margin: 0 5px 0 5px;
+	border: 1px solid var(--color-primary-satur);
+	border-radius: 3px;
+	box-shadow: 0 1px 2px var(--color-primary-satur),
+		0 1px 1px var(--color-secondary) inset,
+		0 -5px 4px var(--color-primary-satur) inset;
+	transition: background-color 0.25s;
+}
+.toggle_down::before {
+	background-position: 0 -17px;
+}
+
+.toggle_up:hover:before, .toggle_down:hover:before {
+	background-color: var(--color-default);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+	transition: background-color 0.25s;
+}
+input, button, select, textarea {
+	color: #222;
+	font: 83.33%/150% "Segoe UI", "Helvetica Neue", "Nimbus Sans L", Arial, "Liberation Sans", sans-serif;
+	background: var(--color-default-satur);
+	outline: none;
+	border: 1px solid var(--color-default);
+	vertical-align: middle;
+	border-radius: 3px;
+	box-shadow: 1px 2px 1px var(--color-default-lighte) inset;
+	padding: 0.3em 0.4em;
+}
+input:hover, textarea:hover, button:hover, select:hover {
+	outline: none;
+	border-color: var(--color-primary);
+}

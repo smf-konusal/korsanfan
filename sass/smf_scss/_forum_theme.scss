@@ -1,0 +1,266 @@
+/* Styles for the standard button lists.
+------------------------------------------------------- */
+.buttonlist, .buttonrow, .pagelinks {
+	z-index: 100;
+	padding: 5px 0 5px 0;
+	margin: 5px 0 5px 0;
+}
+.button, .quickbuttons > li > a, .inline_mod_check {
+	display: inline-block;
+	padding: 0 8px;
+	color: var(--color-secondary-satur);
+	font-size: 0.7rem;
+	line-height: 2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	height: calc(2em + 2em * (0.9 - 0.85)); /* "input" font size minus ".button" font size */
+	border: 1px solid;
+	border-color: var(--color-primary) var(--color-primary) var(--color-primary) var(--color-primary-satur);
+	border-radius: 3px;
+	@include boxx-shadow(1px 1px 1px rgba(221, 221, 221, 0.57));
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.pagesection .button {
+	color: var(--color-primary-lighte);
+}
+.button:not(:first-child) {
+	margin-left: 4px;
+}
+.button:hover, .button:focus,
+.quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
+	color: var(--color-primary-lighte);
+	text-decoration: none;
+}
+.button:hover, .button:focus {
+	color: var(--color-primary-lighte);
+	border-color: var(--color-secondary-satur);
+}
+/* the active one */
+.button.active {
+	background: var(--color-primary);
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid var(--color-primary-lighte);
+	text-shadow: 0 0 1px var(--color-base);
+}
+.button.active:hover, .button.active:focus {
+	color: var(--color-default-lighte);
+	background: var(--color-primary-satur);
+	box-shadow: none;
+}
+.cat_bar .button {
+	box-shadow: none;
+}
+
+
+.generic_list_wrapper, .windowbg, .approvebg, .approvebg2 {
+	background-color: var(--color-primary-lighte);
+	margin: 12px 0 0 0;
+	padding: 12px 16px;
+	border: 1px solid var(--color-default);
+	border-radius: 6px;
+	box-shadow: 0 -2px 2px var(--color-default-satur);
+	overflow: auto;
+}
+
+#topic_container .windowbg {
+	border: 1px solid rgba(0, 0, 0, 0.13);
+	border-top: none;
+	display: flex;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+/* Here comes the glory... */
+.windowbg:nth-of-type(even), .bg.even {
+	background: var(--color-default);
+}
+.windowbg:nth-of-type(odd), .bg.odd {
+	background: var(--color-default-satur);
+}
+
+/* Add some hover on table rows */
+tr.windowbg:hover {
+	background: var(--color-primary-lighte);
+}
+/* Nobody wants locked topics to stand out much. */
+.windowbg.locked {
+	background: var(--color-primary);
+}
+/* Sticky topics get a different background */
+.windowbg.sticky {
+	background: var(--color-primary);
+}
+/* Locked AND sticky are a bit more technical */
+.windowbg.sticky.locked {
+	background: #e8d8cf;
+}
+/* Awaiting approval is a bit special, topics first */
+.windowbg.approvetopic {
+	background: #e4a17c;
+}
+/* Unapproved posts in approved topics */
+.windowbg.approvepost {
+	background: #ffcbcb;
+}
+
+/* Colors for background of posts requiring approval */
+.approvebg {
+	color: #222;
+	background: #ffeaea;
+}
+.approvebg2 {
+	color: #222;
+	background: #fff2f2;
+}
+
+/* Cat_bar / catbg */
+div.cat_bar {
+	background-color: var(--color-primary);
+	border-bottom: 1px solid var(--color-primary-satur);
+	padding: 0;
+	border-radius: 6px 6px 0 0;
+	box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
+}
+.cat_bar h3 {
+	padding: 8px 12px 6px 12px;
+}
+/* Styles for rounded headers. */
+.cat_bar .desc {
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5em;
+	font-weight: normal;
+	margin: -8px 0 4px 8px;
+}
+.cat_bar .desc a {
+	color: #fff;
+	font-weight: 600;
+}
+h3.catbg {
+	overflow: hidden;
+	font-size: 1.1em;
+	font-family: "Tahoma", sans-serif;
+}
+h3.catbg, h3.catbg a, h3.catbg a:hover {
+	color: #fff;
+}
+h3.catbg a:hover {
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+h3.catbg .main_icons::before, h3.catbg .icon {
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+}
+.cat_bar + .windowbg, .cat_bar + .roundframe {
+	margin-top: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.cat_bar + .title_bar {
+	margin-top: 0;
+}
+/* Roundframe */
+.roundframe {
+	margin: 10px 0 0 0;
+	padding: 12px 16px;
+	background: var(--color-primary);
+	border: 1px solid var(--color-secondary-lighte);
+	border-radius: 7px;
+	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+	overflow: auto;
+}
+/* TitleBar & SubBar */
+.title_bar {
+	border: 1px solid var(--color-secondary);
+	border-top: 2px solid var(--color-secondary-lighte);
+	border-bottom: 2px solid var(--color-secondary-lighte);
+	background-color: var(--color-secondary);
+	color: #666;
+	border-radius: 2px 2px 0 0;
+	margin: 5px 0 0 0;
+}
+.sub_bar {
+	border-bottom: 1px solid var(--color-secondary-lighte);
+	text-shadow: none;
+	background: none;
+	box-shadow: 0 -1px 0 #999 inset;
+	clear: both;
+}
+h3.titlebg, h4.titlebg, .titlebg, h3.subbg, h4.subbg, .subbg {
+	background-color: var(--color-default-lighte);
+	color: var(--color-default-lighte);
+	font-family: "Tahoma", sans-serif;
+	font-weight: bold;
+	overflow: hidden;
+	padding: 6px 12px 5px 12px;
+	text-shadow: none;
+}
+.title_bar + .windowbg, .title_bar + .roundframe {
+	margin-top: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+
+.up_contain {
+	overflow: hidden;
+	border: 1px solid var(--color-secondary);
+	margin: -1px 0 1px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.info .subject {
+	font-weight: 600;
+	font-size: 1.1em;
+	color: var(--color-secondary);
+}
+
+/* Those classes are sharing exact same gradient. */
+/* Background of buttons */
+.dropmenu li ul, .top_menu, .dropmenu li li:hover, .button,
+.dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover,
+#top_section, .quickbuttons > li,
+.quickbuttons li ul, .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus,
+.inline_mod_check, .popup_window, #inner_section, .post_options ul,
+.post_options ul a:hover, .post_options ul a:focus, .notify_dropdown a:hover, .notify_dropdown a:focus {
+	background: #fff; /* fallback for some browsers */
+	background-image: linear-gradient(var(--color-primary) 0%, var(--color-default) 70%);
+}
+/* Well some of them has different gradient effect on hover */
+.button:hover, #search_form .button:hover, .quickbuttons li:hover {
+	background: #fff;
+	background-image: linear-gradient(to bottom, var(--color-default) 0%, var(--color-secondary) 70%);
+}
+/* If it fits I sits... */
+.navigate_section ul, .popup_content, .up_contain {
+	background: #fff;
+	background-image: linear-gradient(to bottom, var(--color-default) 0%, var(--color-primary) 95%);
+}
+
+/* Information */
+.information {
+	background: var(--color-default);
+	overflow: auto;
+	padding-bottom: .5em;
+	border: 1px solid var(--color-default-satur);
+	border-top: none;
+	border-radius: 0 0 7px 7px;
+	margin: 0 0 10px 0;
+	padding: 12px 9px 8px 9px;
+}
+.inner {
+	padding: 7px 8px 2px 2px;
+	margin: 0;
+	border-top: 1px solid var(--color-default-satur);
+	box-shadow: 0 1px 0 var(--color-primary) inset;
+	min-height: 85px;
+	word-wrap: break-word; /* IE fallback */
+	overflow-wrap: break-word;
+}

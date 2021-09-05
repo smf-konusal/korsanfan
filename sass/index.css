@@ -1,0 +1,1934 @@
+/* 
+    Huu Team By KorsanFan Theme - Sass files : https://github.com/smf-konusal/korsanfan
+    By https://smf.konusal.com/
+    */
+:root {
+  --color-base: rgba(0, 0, 0, 0.6);
+  --color-default-h: 38.43137deg;
+  --color-default-s: 68%;
+  --color-default-l: 44.11765%;
+  --color-default: hsl(var(--color-default-h), var(--color-default-s), var(--color-default-l));
+  --color-default-lighte: hsl(var(--color-default-h), var(--color-default-s), calc(var(--color-default-l) * 4.2));
+  --color-default-satur: hsl(var(--color-default-h), calc(var(--color-default-s) * 0.6), var(--color-default-l));
+  --color-primary-h: 26.4deg;
+  --color-primary-s: 39.68254%;
+  --color-primary-l: 24.70588%;
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-lighte: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) * 4.2));
+  --color-primary-satur: hsl(var(--color-primary-h), calc(var(--color-primary-s) * 0.6), var(--color-primary-l));
+  --color-secondary-h: 33.10345deg;
+  --color-secondary-s: 56.86275%;
+  --color-secondary-l: 10%;
+  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+  --color-secondary-lighte: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) * 2.7));
+  --color-secondary-satur: hsl(var(--color-secondary-h), calc(var(--color-secondary-s) * 1.2), var(--color-secondary-l));
+}
+
+.dark-mode {
+  --color-default-h: 33.10345deg;
+  --color-default-s: 56.86275%;
+  --color-default-l: 10%;
+  --color-default: hsl(var(--color-default-h), var(--color-default-s), var(--color-default-l));
+  --color-default-lighte: hsl(var(--color-secondary-h), calc(var(--color-secondary-s) * 1.2), var(--color-secondary-l));
+  --color-default-satur: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) * 2.7));
+  --color-primary-h: 26.4deg;
+  --color-primary-s: 39.68254%;
+  --color-primary-l: 24.70588%;
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-lighte: hsl(var(--color-primary-h), calc(var(--color-primary-s) * 0.6), var(--color-primary-l));
+  --color-primary-satur: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) * 4.2));
+  --color-secondary-h: 38.43137deg;
+  --color-secondary-s: 68%;
+  --color-secondary-l: 44.11765%;
+  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+  --color-secondary-lighte: hsl(var(--color-default-h), calc(var(--color-default-s) * 0.6), var(--color-default-l));
+  --color-secondary-satur: hsl(var(--color-default-h), var(--color-default-s), calc(var(--color-default-l) * 4.2));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-default-h: 33.10345deg;
+    --color-default-s: 56.86275%;
+    --color-default-l: 10%;
+    --color-default: hsl(var(--color-default-h), var(--color-default-s), var(--color-default-l));
+    --color-default-lighte: hsl(var(--color-secondary-h), calc(var(--color-secondary-s) * 1.2), var(--color-secondary-l));
+    --color-default-satur: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) * 2.7));
+    --color-primary-h: 26.4deg;
+    --color-primary-s: 39.68254%;
+    --color-primary-l: 24.70588%;
+    --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+    --color-primary-lighte: hsl(var(--color-primary-h), calc(var(--color-primary-s) * 0.6), var(--color-primary-l));
+    --color-primary-satur: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) * 4.2));
+    --color-secondary-h: 38.43137deg;
+    --color-secondary-s: 68%;
+    --color-secondary-l: 44.11765%;
+    --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+    --color-secondary-lighte: hsl(var(--color-default-h), calc(var(--color-default-s) * 0.6), var(--color-default-l));
+    --color-secondary-satur: hsl(var(--color-default-h), var(--color-default-s), calc(var(--color-default-l) * 4.2));
+  }
+}
+
+/*Theme On Sass List */
+#current_mode {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sk-chase {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  -webkit-animation: sk-chase 2.5s infinite linear both;
+          animation: sk-chase 2.5s infinite linear both;
+  margin: 4px;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-animation: sk-chase-dot 2.0s infinite ease-in-out both;
+          animation: sk-chase-dot 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-color: var(--color-secondary);
+  border-radius: 100%;
+  -webkit-animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
+          animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:nth-child(1) {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+
+.sk-chase-dot:nth-child(2) {
+  -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+}
+
+.sk-chase-dot:nth-child(3) {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+
+.sk-chase-dot:nth-child(4) {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.sk-chase-dot:nth-child(5) {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+
+.sk-chase-dot:nth-child(6) {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+
+.sk-chase-dot:nth-child(1):before {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+
+.sk-chase-dot:nth-child(2):before {
+  -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+}
+
+.sk-chase-dot:nth-child(3):before {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+
+.sk-chase-dot:nth-child(4):before {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.sk-chase-dot:nth-child(5):before {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+
+.sk-chase-dot:nth-child(6):before {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+
+@-webkit-keyframes sk-chase {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-chase-dot {
+  80%, 100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase-dot {
+  80%, 100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-chase-dot-before {
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100%, 0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100%, 0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+#recent_posts_content {
+  background: var(--color-secondary-lighte);
+  margin-bottom: 10px;
+}
+
+/*Default Smf Theme Sass Files List*/
+/* Index */
+html {
+  background: var(--color-secondary);
+}
+
+body {
+  background: var(--color-secondary);
+  font: 83.33%/150% "Segoe UI", "Helvetica Neue", "Nimbus Sans L", Arial, "Liberation Sans", sans-serif;
+  color: var(--color-base);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: var(--color-primary);
+  color: var(--color-base);
+}
+
+::selection {
+  text-shadow: none;
+  background: var(--color-primary);
+  color: var(--color-base);
+}
+
+/* This is about links */
+a, a:visited {
+  color: var(--color-default-lighte);
+  text-decoration: none;
+}
+
+/* Standard horizontal rule.. ([hr], etc.) */
+hr {
+  border: none;
+  margin: 12px 0;
+  height: 2px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 0 #bbb inset;
+          box-shadow: 0 1px 0 #bbb inset;
+}
+
+strong, .strong {
+  font-weight: bold;
+  color: var(--color-base);
+}
+
+.cat_bar strong {
+  color: #fff;
+}
+
+/* Styles for the standard button lists.
+------------------------------------------------------- */
+.buttonlist, .buttonrow, .pagelinks {
+  z-index: 100;
+  padding: 5px 0 5px 0;
+  margin: 5px 0 5px 0;
+}
+
+.button, .quickbuttons > li > a, .inline_mod_check {
+  display: inline-block;
+  padding: 0 8px;
+  color: var(--color-secondary-satur);
+  font-size: 0.7rem;
+  line-height: 2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: calc(2em + 2em * (0.9 - 0.85));
+  /* "input" font size minus ".button" font size */
+  border: 1px solid;
+  border-color: var(--color-primary) var(--color-primary) var(--color-primary) var(--color-primary-satur);
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.57);
+  box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.57);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.pagesection .button {
+  color: var(--color-primary-lighte);
+}
+
+.button:not(:first-child) {
+  margin-left: 4px;
+}
+
+.button:hover, .button:focus,
+.quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
+  color: var(--color-primary-lighte);
+  text-decoration: none;
+}
+
+.button:hover, .button:focus {
+  color: var(--color-primary-lighte);
+  border-color: var(--color-secondary-satur);
+}
+
+/* the active one */
+.button.active {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid var(--color-primary-lighte);
+  text-shadow: 0 0 1px var(--color-base);
+}
+
+.button.active:hover, .button.active:focus {
+  color: var(--color-default-lighte);
+  background: var(--color-primary-satur);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.cat_bar .button {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.generic_list_wrapper, .windowbg, .approvebg, .approvebg2 {
+  background-color: var(--color-primary-lighte);
+  margin: 12px 0 0 0;
+  padding: 12px 16px;
+  border: 1px solid var(--color-default);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 -2px 2px var(--color-default-satur);
+          box-shadow: 0 -2px 2px var(--color-default-satur);
+  overflow: auto;
+}
+
+#topic_container .windowbg {
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-top: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Here comes the glory... */
+.windowbg:nth-of-type(even), .bg.even {
+  background: var(--color-default);
+}
+
+.windowbg:nth-of-type(odd), .bg.odd {
+  background: var(--color-default-satur);
+}
+
+/* Add some hover on table rows */
+tr.windowbg:hover {
+  background: var(--color-primary-lighte);
+}
+
+/* Nobody wants locked topics to stand out much. */
+.windowbg.locked {
+  background: var(--color-primary);
+}
+
+/* Sticky topics get a different background */
+.windowbg.sticky {
+  background: var(--color-primary);
+}
+
+/* Locked AND sticky are a bit more technical */
+.windowbg.sticky.locked {
+  background: #e8d8cf;
+}
+
+/* Awaiting approval is a bit special, topics first */
+.windowbg.approvetopic {
+  background: #e4a17c;
+}
+
+/* Unapproved posts in approved topics */
+.windowbg.approvepost {
+  background: #ffcbcb;
+}
+
+/* Colors for background of posts requiring approval */
+.approvebg {
+  color: #222;
+  background: #ffeaea;
+}
+
+.approvebg2 {
+  color: #222;
+  background: #fff2f2;
+}
+
+/* Cat_bar / catbg */
+div.cat_bar {
+  background-color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary-satur);
+  padding: 0;
+  border-radius: 6px 6px 0 0;
+  -webkit-box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;
+          box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cat_bar h3 {
+  padding: 8px 12px 6px 12px;
+}
+
+/* Styles for rounded headers. */
+.cat_bar .desc {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5em;
+  font-weight: normal;
+  margin: -8px 0 4px 8px;
+}
+
+.cat_bar .desc a {
+  color: #fff;
+  font-weight: 600;
+}
+
+h3.catbg {
+  overflow: hidden;
+  font-size: 1.1em;
+  font-family: "Tahoma", sans-serif;
+}
+
+h3.catbg, h3.catbg a, h3.catbg a:hover {
+  color: #fff;
+}
+
+h3.catbg a:hover {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+h3.catbg .main_icons::before, h3.catbg .icon {
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+
+.cat_bar + .windowbg, .cat_bar + .roundframe {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.cat_bar + .title_bar {
+  margin-top: 0;
+}
+
+/* Roundframe */
+.roundframe {
+  margin: 10px 0 0 0;
+  padding: 12px 16px;
+  background: var(--color-primary);
+  border: 1px solid var(--color-secondary-lighte);
+  border-radius: 7px;
+  -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+/* TitleBar & SubBar */
+.title_bar {
+  border: 1px solid var(--color-secondary);
+  border-top: 2px solid var(--color-secondary-lighte);
+  border-bottom: 2px solid var(--color-secondary-lighte);
+  background-color: var(--color-secondary);
+  color: #666;
+  border-radius: 2px 2px 0 0;
+  margin: 5px 0 0 0;
+}
+
+.sub_bar {
+  border-bottom: 1px solid var(--color-secondary-lighte);
+  text-shadow: none;
+  background: none;
+  -webkit-box-shadow: 0 -1px 0 #999 inset;
+          box-shadow: 0 -1px 0 #999 inset;
+  clear: both;
+}
+
+h3.titlebg, h4.titlebg, .titlebg, h3.subbg, h4.subbg, .subbg {
+  background-color: var(--color-default-lighte);
+  color: var(--color-default-lighte);
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 6px 12px 5px 12px;
+  text-shadow: none;
+}
+
+.title_bar + .windowbg, .title_bar + .roundframe {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.up_contain {
+  overflow: hidden;
+  border: 1px solid var(--color-secondary);
+  margin: -1px 0 1px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.info .subject {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--color-secondary);
+}
+
+/* Those classes are sharing exact same gradient. */
+/* Background of buttons */
+.dropmenu li ul, .top_menu, .dropmenu li li:hover, .button,
+.dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover,
+#top_section, .quickbuttons > li,
+.quickbuttons li ul, .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus,
+.inline_mod_check, .popup_window, #inner_section, .post_options ul,
+.post_options ul a:hover, .post_options ul a:focus, .notify_dropdown a:hover, .notify_dropdown a:focus {
+  background: #fff;
+  /* fallback for some browsers */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-primary)), color-stop(70%, var(--color-default)));
+  background-image: linear-gradient(var(--color-primary) 0%, var(--color-default) 70%);
+}
+
+/* Well some of them has different gradient effect on hover */
+.button:hover, #search_form .button:hover, .quickbuttons li:hover {
+  background: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-default)), color-stop(70%, var(--color-secondary)));
+  background-image: linear-gradient(to bottom, var(--color-default) 0%, var(--color-secondary) 70%);
+}
+
+/* If it fits I sits... */
+.navigate_section ul, .popup_content, .up_contain {
+  background: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-default)), color-stop(95%, var(--color-primary)));
+  background-image: linear-gradient(to bottom, var(--color-default) 0%, var(--color-primary) 95%);
+}
+
+/* Information */
+.information {
+  background: var(--color-default);
+  overflow: auto;
+  padding-bottom: .5em;
+  border: 1px solid var(--color-default-satur);
+  border-top: none;
+  border-radius: 0 0 7px 7px;
+  margin: 0 0 10px 0;
+  padding: 12px 9px 8px 9px;
+}
+
+.inner {
+  padding: 7px 8px 2px 2px;
+  margin: 0;
+  border-top: 1px solid var(--color-default-satur);
+  -webkit-box-shadow: 0 1px 0 var(--color-primary) inset;
+          box-shadow: 0 1px 0 var(--color-primary) inset;
+  min-height: 85px;
+  word-wrap: break-word;
+  /* IE fallback */
+  overflow-wrap: break-word;
+}
+
+/* Some lovely generic icons.
+------------------------------------------------- */
+.main_icons::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(../images/icons/main_icons_sprite.png) no-repeat -5px -5px/260px auto;
+  vertical-align: middle;
+}
+
+/* Load better icons for higher resolution screens */
+@media screen and (-webkit-min-device-pixel-ratio: 1.6666666666666667), screen and (min-resolution: 160dpi) {
+  .main_icons::before {
+    background-image: url(../images/icons/main_icons_sprite_hd.png);
+  }
+}
+
+/* Small fix for topics */
+.quickbuttons .main_icons::before, .button .main_icons::before {
+  margin: -3px 3px 0 1px;
+}
+
+.main_icons.gender_None::before {
+  background: none;
+}
+
+.main_icons.gender_0::before {
+  display: none;
+}
+
+/* This is a small fix for dropmenu icons */
+.dropmenu .main_icons::before, #profile_menu .main_icons::before, .dropmenu img {
+  margin: -3px 8px 0 0;
+  vertical-align: middle;
+}
+
+/* Top row */
+.main_icons.help::before {
+  background-position: -5px -5px;
+}
+
+.main_icons.search::before, .main_icons.engines::before {
+  background-position: -31px -5px;
+}
+
+.main_icons.quick_edit_button::before, .main_icons.modify_button::before {
+  background-position: -57px -5px;
+}
+
+.main_icons.check::before {
+  background-position: -83px -5px;
+}
+
+.main_icons.invalid::before {
+  background-position: -109px -5px;
+}
+
+.main_icons.gender_2::before {
+  background-position: -135px -5px;
+}
+
+.main_icons.watch::before {
+  background-position: -239px -5px;
+}
+
+/* 2nd row */
+.main_icons.move::before, .main_icons.next_page::before {
+  background-position: -5px -31px;
+}
+
+.main_icons.general::before, .main_icons.boards::before, .main_icons.topics_views::before {
+  background-position: -31px -31px;
+}
+
+.main_icons.gender_1::before {
+  background-position: -57px -31px;
+}
+
+.main_icons.features::before {
+  background-position: -83px -31px;
+}
+
+.main_icons.posters::before {
+  background-position: -109px -31px;
+}
+
+.main_icons.replies::before, .main_icons.topics_replies::before {
+  background-position: -135px -31px;
+}
+
+.main_icons.history::before, .main_icons.time_online::before, .main_icons.scheduled::before {
+  background-position: -161px -31px;
+}
+
+.main_icons.views::before {
+  background-position: -187px -31px;
+}
+
+.main_icons.last_post::before {
+  background-position: -213px -31px;
+}
+
+.main_icons.starters::before, .main_icons.people::before, .main_icons.membergroups::before, .main_icons.mlist::before {
+  background-position: -239px -31px;
+}
+
+/* 3rd Street Saints */
+.main_icons.poll::before {
+  background-position: -5px -57px;
+}
+
+.main_icons.previous_page::before {
+  background-position: -31px -57px;
+}
+
+.main_icons.inbox::before {
+  background-position: -57px -57px;
+}
+
+.main_icons.www::before {
+  background-position: -83px -57px;
+}
+
+.main_icons.exit::before, .main_icons.logout::before {
+  background-position: -109px -57px;
+}
+
+.main_icons.switch::before {
+  background-position: -135px -57px;
+}
+
+.main_icons.replied::before, .main_icons.send::before {
+  background-position: -161px -57px;
+}
+
+.main_icons.im_on::before {
+  background-position: -187px -57px;
+}
+
+.main_icons.im_off::before {
+  background-position: -213px -57px;
+}
+
+.main_icons.split_desel::before {
+  background-position: -239px -57px;
+}
+
+/* 4th Row */
+.main_icons.split_sel::before {
+  background-position: -5px -83px;
+}
+
+.main_icons.mail::before {
+  background-position: -31px -83px;
+}
+
+.main_icons.warning_mute::before {
+  background-position: -57px -83px;
+}
+
+.main_icons.alerts::before, .main_icons.warn_button::before,
+.main_icons.warning_moderate::before {
+  background-position: -83px -83px;
+}
+
+.main_icons.mail_new::before {
+  background-position: -109px -83px;
+}
+
+.main_icons.drafts::before,
+.main_icons.reply_button::before,
+.main_icons.reply_all_button::before {
+  background-position: -135px -83px;
+}
+
+.main_icons.warning_watch::before {
+  background-position: -161px -83px;
+}
+
+.main_icons.calendar_export::before {
+  background-position: -187px -83px;
+}
+
+.main_icons.calendar::before {
+  background-position: -213px -83px;
+}
+
+.main_icons.calendar_modify::before {
+  background-position: -239px -83px;
+}
+
+/* 5th Row */
+.main_icons.plus::before {
+  background-position: -5px -109px;
+}
+
+.main_icons.warning::before, .main_icons.moderate::before {
+  background-position: -31px -109px;
+}
+
+.main_icons.themes::before {
+  background-position: -57px -109px;
+}
+
+.main_icons.support::before {
+  background-position: -83px -109px;
+}
+
+.main_icons.liked_users::before, .main_icons.liked_messages::before, .main_icons.like::before {
+  background-position: -109px -109px;
+}
+
+.main_icons.unlike::before {
+  background-position: -135px -109px;
+}
+
+.main_icons.current_theme::before {
+  background-position: -161px -109px;
+}
+
+.main_icons.stats::before {
+  background-position: -187px -109px;
+}
+
+.main_icons.right_arrow::before {
+  background-position: -213px -109px;
+}
+
+.main_icons.left_arrow::before {
+  background-position: -239px -109px;
+}
+
+/* 6th Row */
+.main_icons.smiley::before {
+  background-position: -5px -135px;
+}
+
+.main_icons.server::before {
+  background-position: -31px -135px;
+}
+
+.main_icons.ban::before, .main_icons.ignore::before {
+  background-position: -57px -135px;
+}
+
+.main_icons.boards::before {
+  background-position: -83px -135px;
+}
+
+.main_icons.regcenter::before {
+  background-position: -109px -135px;
+}
+
+.main_icons.posts::before {
+  background-position: -135px -135px;
+}
+
+.main_icons.sort_down::before {
+  background-position: -161px -135px;
+}
+
+.main_icons.change_menu2::before, .main_icons.sent::before {
+  background-position: -187px -135px;
+}
+
+.main_icons.post_moderation_moderate::before {
+  background-position: -213px -135px;
+}
+
+.main_icons.sort_up::before {
+  background-position: -239px -135px;
+}
+
+/* 7th Row */
+.main_icons.post_moderation_deny::before {
+  background-position: -5px -161px;
+}
+
+.main_icons.post_moderation_attach::before {
+  background-position: -31px -161px;
+}
+
+.main_icons.post_moderation_allow::before {
+  background-position: -57px -161px;
+}
+
+.main_icons.personal_message::before {
+  background-position: -83px -161px;
+}
+
+.main_icons.permissions::before, .main_icons.signup::before {
+  background-position: -109px -161px;
+}
+
+.main_icons.paid::before {
+  background-position: -135px -161px;
+}
+
+.main_icons.packages::before {
+  background-position: -161px -161px;
+}
+
+.main_icons.filter::before {
+  background-position: -187px -161px;
+  margin: 0 5px 0 0;
+}
+
+.main_icons.change_menu::before {
+  background-position: -213px -161px;
+}
+
+.main_icons.package_ops::before {
+  background-position: -239px -161px;
+}
+
+/* 8th Row */
+.main_icons.reports::before {
+  background-position: -5px -187px;
+}
+
+.main_icons.news::before {
+  background-position: -31px -187px;
+}
+
+.main_icons.delete::before, .main_icons.hide_popup::before, .main_icons.prune::before, .main_icons.remove_button::before {
+  background-position: -57px -187px;
+}
+
+.main_icons.modifications::before {
+  background-position: -83px -187px;
+}
+
+.main_icons.maintain::before, .main_icons.admin::before {
+  background-position: -109px -187px;
+}
+
+.main_icons.administration::before, .main_icons.home::before {
+  background-position: -135px -187px;
+}
+
+.main_icons.frenemy::before {
+  background-position: -161px -187px;
+}
+
+.main_icons.attachment::before {
+  background-position: -187px -187px;
+}
+
+.main_icons.lock::before, .main_icons.security::before {
+  background-position: -213px -187px;
+}
+
+.main_icons.error::before, .main_icons.disable::before {
+  background-position: -239px -187px;
+}
+
+/* 9th Row */
+.main_icons.languages::before {
+  background-position: -5px -213px;
+}
+
+.main_icons.members_request::before {
+  background-position: -31px -213px;
+}
+
+.main_icons.members_delete::before {
+  background-position: -57px -213px;
+}
+
+.main_icons.members::before {
+  background-position: -83px -213px;
+}
+
+.main_icons.members_watched::before {
+  background-position: -109px -213px;
+}
+
+.main_icons.sticky::before {
+  background-position: -135px -213px;
+}
+
+.main_icons.corefeatures::before, .main_icons.settings::before, .main_icons.manrules::before, .main_icons.manlabels::before {
+  background-position: -161px -213px;
+}
+
+.main_icons.calendar::before {
+  background-position: -187px -213px;
+}
+
+.main_icons.logs::before {
+  background-position: -213px -213px;
+}
+
+.main_icons.valid::before {
+  background-position: -239px -213px;
+}
+
+/* 10th Row */
+.main_icons.approve::before, .main_icons.enable::before,
+.main_icons.approve_button::before,
+.main_icons.read_button::before {
+  background-position: -5px -239px;
+}
+
+.main_icons.close::before {
+  background-position: -31px -239px;
+}
+
+.main_icons.details::before {
+  background-position: -57px -239px;
+}
+
+.main_icons.merge::before {
+  background-position: -83px -239px;
+}
+
+.main_icons.folder::before {
+  background-position: -109px -239px;
+}
+
+.main_icons.restore_button::before {
+  background-position: -135px -239px;
+}
+
+.main_icons.split_button::before {
+  background-position: -161px -239px;
+}
+
+.main_icons.unapprove_button::before,
+.main_icons.unread_button::before {
+  background-position: -187px -239px;
+}
+
+.main_icons.quote::before, .main_icons.quote_selected::before {
+  background-position: -213px -239px;
+}
+
+.main_icons.notify_button::before {
+  background-position: -239px -239px;
+}
+
+.main_icons.select_above::before {
+  background-position: -161px -5px;
+}
+
+.main_icons.select_here::before {
+  background-position: -187px -5px;
+}
+
+.main_icons.select_below::before {
+  background-position: -213px -5px;
+}
+
+/* Styles for the standard dropdown menus.
+------------------------------------------------------- */
+.dropmenu, #top_info {
+  position: relative;
+}
+
+/* Level 1 button background. */
+.dropmenu > li, #top_info > li {
+  display: inline-block;
+  margin: 0 2px 0 1px;
+  font-size: 0.8em;
+  line-height: 1.7em;
+}
+
+/* Disable default focus outlines */
+.dropmenu a {
+  outline: 0;
+}
+
+/* For cases where we want to spotlight something specific to an item, e.g. an amount */
+.amt {
+  margin-left: 3px;
+  padding: 0 5px;
+  color: #fff;
+  background: #6d90ad;
+  border-radius: 8px;
+}
+
+.dropmenu li .active .amt, #top_info li .active .amt {
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+
+#top_info .top_menu.visible {
+  display: block;
+}
+
+/* Needed for new PM notifications. */
+.dropmenu li strong {
+  color: var(--color-secondary);
+}
+
+.dropmenu li a, #top_info > li > a {
+  padding: 0 7px 0 7px;
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+/* Level 1 active button. */
+.dropmenu a.active, #top_info a.active {
+  color: #fff;
+  font-weight: bold;
+  border-color: var(--color-primary);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color-primary)), to(var(--color-primary-satur)));
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-satur));
+  text-shadow: 0 0 2px #000;
+}
+
+/* Level 1 hover effects. */
+.dropmenu > li:hover > a, .dropmenu > li > a:focus,
+#top_info > li:hover > a, #top_info > li > a:focus, #top_info > li > a.open {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary-satur);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: 0 2px 2px var(--color-secondary) inset;
+  box-shadow: 0 2px 2px var(--color-secondary) inset;
+  text-shadow: 0 0 2px #000;
+}
+
+/* Level 1 active button. */
+.dropmenu li a.active:hover, .dropmenu li:hover a.active {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary-satur);
+  color: var(--primary-lighte);
+  -webkit-box-shadow: 0 5px 5px var(--color-primary-satur) inset;
+  box-shadow: 0 5px 5px var(--color-primary-satur) inset;
+  text-shadow: none;
+}
+
+/* User information. */
+#profile_menu_top::after {
+  content: " \25BC";
+}
+
+.profile_user_info, .profile_user_avatar {
+  display: inline-block;
+  margin: 0 9px;
+  vertical-align: middle;
+}
+
+.profile_user_avatar img.avatar {
+  max-width: 100px;
+}
+
+.profile_username {
+  font-size: 150%;
+  display: block;
+}
+
+.profile_user_links ol {
+  margin: 0 10px;
+  clear: both;
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.profile_user_links li {
+  font-size: .8rem;
+  line-height: 2em;
+  padding-left: 24px;
+  text-indent: -24px;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+}
+
+/* Levels 2 and 3 submenu wrapper. */
+.dropmenu li ul, .top_menu {
+  z-index: 90;
+  position: absolute;
+  display: none;
+  min-width: 18.2em;
+  padding: 0.5em;
+  font-weight: normal;
+  border: solid 1px var(--color-primary);
+  border-left: solid 1px var(--color-primary-satur);
+  border-top: solid 1px var(--color-primary-satur);
+  border-radius: 4px;
+  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+  background: var(--color-default);
+}
+
+/* Level 2 link background. */
+.dropmenu li li {
+  margin: 0;
+  padding: 0;
+  width: 17em;
+  font-size: 1em;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+/* Necessary to allow highlighting of 1st level while hovering over submenu. */
+.dropmenu li:hover li a, .dropmenu li li a {
+  background: none;
+  padding: 0 9px;
+  color: var(--color-primary);
+  border: none;
+  line-height: 2.2em;
+}
+
+.dropmenu li li a > img {
+  vertical-align: middle;
+}
+
+/* The profile/pm menus are declared off .dropmenu li ul for consistency but have other characteristics. */
+.top_menu {
+  min-width: 25em;
+}
+
+.top_menu .login {
+  width: 100%;
+}
+
+.top_menu .login dt {
+  text-align: left;
+  width: 55%;
+}
+
+.top_menu .login dd {
+  width: 43%;
+}
+
+.top_menu .login input {
+  width: 90%;
+}
+
+/* Note: The next declarations are for keyboard access with js disabled. */
+.dropmenu ul a:focus, .dropmenu ul ul a:focus {
+  margin-left: 9990px;
+  border: none;
+  width: 17em;
+}
+
+.dropmenu ul ul a:focus {
+  margin-left: 19950px;
+}
+
+/* Cancel those for hover and/or js access. */
+.dropmenu ul li:hover a:focus, .dropmenu ul li a:focus {
+  margin-left: 0;
+  width: auto;
+}
+
+/* Level 3 submenu wrapper positioning. */
+.dropmenu li ul ul {
+  margin: -2em 0 0 15.3em;
+}
+
+/* Level 3 maintains font-size the same as Level 2. */
+.dropmenu li li li a {
+  font-size: 1em;
+}
+
+/* Levels 2 and 3 hover effects. */
+.dropmenu li li:hover {
+  border: none;
+}
+
+.dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary-satur);
+}
+
+/* Reposition Level 2 submenu as visible on hover. */
+.dropmenu li:hover ul {
+  display: block;
+}
+
+/* Hiding Level 3 submenu off hover. */
+.dropmenu li:hover ul ul, .dropmenu li ul ul, .dropmenu li:hover ul ul ul, .dropmenu li ul ul ul {
+  left: -9999px;
+}
+
+/* Reposition as visible on hover. */
+.dropmenu li li:hover ul, .dropmenu li li ul {
+  left: -14px;
+}
+
+.dropmenu li li.subsections > a::after {
+  position: absolute;
+  padding: 5px 0;
+  right: 10px;
+  font: 83.33%/150% Arial, sans-serif;
+  content: "\25ba";
+}
+
+/* Highlighting of current section */
+.dropmenu li li a.chosen {
+  font-weight: bold;
+}
+
+/* The extra menu rows for admin sections, etc. */
+#adm_submenus {
+  margin: 0 0 6px 0;
+  overflow: hidden;
+}
+
+/* poster details and list of items */
+.poster {
+  float: left;
+  /* Don't set this in em.It will eat too much space if people need to set large text sizes. */
+  width: 160px;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  /* IE fallback */
+  overflow-wrap: break-word;
+}
+
+.poster h4 {
+  font-size: 1.2em;
+}
+
+.poster h4, .poster h4 a, .poster li:hover h4 a, .poster h4 a:hover .poster li h4 a, .poster h4 a:focus {
+  margin: 0;
+  padding: 0;
+  color: #c06002;
+}
+
+.postarea, .moderatorbar {
+  margin: 0 0 0 175px;
+}
+
+/* Drop part of QuickButtons */
+.post_options ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  z-index: 90;
+  padding: 6px;
+  background: #fff;
+  font-weight: normal;
+  text-align: left;
+  border: solid 1px #999;
+  border-left: solid 1px #aaa;
+  border-top: solid 1px #bbb;
+  border-radius: 4px 0 4px 4px;
+  -webkit-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.post_options:hover ul {
+  display: block;
+}
+
+.post_options ul a {
+  display: block;
+  width: 12em;
+  padding: 0 6px;
+  line-height: 2.2em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.post_options ul a:hover, .post_options ul a:focus {
+  border-color: #c4cbd3;
+}
+
+/* Styles for the general looks of the theme.
+------------------------------------------------------- */
+/* Box-shadow only on this one. */
+#wrapper {
+  clear: both;
+}
+
+/* Set maximum width limit for content */
+#top_section .inner_wrap, #wrapper, #header, #footer .inner_wrap, #main_menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 98%;
+}
+
+/* The framing graphics */
+/* The top bar. */
+#top_section {
+  border-bottom: 1px solid #bbb;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+  background: var(--color-default);
+  clear: both;
+}
+
+#top_section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#top_info {
+  padding: 5px 0;
+  line-height: 1.3em;
+  width: auto;
+}
+
+#profile_menu_top > img.avatar {
+  height: 18px;
+  width: 18px;
+  margin: 2px 5px 0 0;
+  float: left;
+}
+
+.notice {
+  font-weight: bold;
+}
+
+#languages_form, #search_form {
+  padding: 5px 0;
+}
+
+#languages_form {
+  margin: 0 0 0 10px;
+}
+
+/* The logo and slogan. */
+#header {
+  padding: 0px 2px 12px 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* The main title. */
+h1.forumtitle {
+  font-size: 1.8em;
+  font-family: "Tahoma", sans-serif;
+  padding: 22px 12px 6px 10px;
+  font-weight: normal;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+h1.forumtitle a {
+  color: var(--color-primary);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Float these items to the right */
+#siteslogan, img#smflogo {
+  padding-right: 2px;
+  font-size: 1.4em;
+}
+
+/* Tweak the SMF logo */
+img#smflogo {
+  margin: 0px 0 0 0;
+}
+
+/* Even guests need to be aligned */
+.welcome {
+  padding: 7px 0 8px 10px;
+}
+
+/*
+/* The user info, news, etc.*/
+#upper_section {
+  padding: 2px 2px 0 2px;
+}
+
+#inner_section {
+  padding: 12px 10px 2px 10px;
+  border-radius: 6px 6px 0 0;
+}
+
+#inner_section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* The upper_section, float the two each way */
+.user {
+  width: 50%;
+  float: left;
+  overflow: auto;
+  padding: 0 4px 6px 4px;
+  font-size: 0.9em;
+}
+
+.user ul {
+  padding: 0 0 5px 0;
+  font-size: 0.9em;
+  line-height: 1.8em;
+}
+
+ul li.greeting {
+  font-weight: bold;
+}
+
+/* The login form. */
+#guest_form {
+  overflow: hidden;
+  font-size: 0.9em;
+  margin-left: -2px;
+}
+
+/* News section. */
+#inner_wrap .news {
+  max-width: 50%;
+  float: right;
+  padding: 0 0 6px 0;
+  font-size: 0.9em;
+}
+
+#inner_wrap .news h2, #inner_wrap .news p {
+  display: inline;
+  padding: 0 0 0 4px;
+}
+
+/* The content section */
+#content_section {
+  margin: 0 auto;
+  clear: both;
+}
+
+#main_content_section {
+  padding: 5px 12px 16px 12px;
+}
+
+#main_content_section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Footer is now full-width by default. */
+/* The footer with copyright links etc. */
+#footer {
+  margin: 0 0 0 0;
+  padding: 10px 0;
+  background: var(--color-base);
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+#footer li, #footer p, #footer a {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+#footer li.copyright {
+  display: block;
+  font-family: Verdana, sans-serif;
+  /* Copyright must be Verdana! */
+}
+
+#footerfix {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+/* Styles for the search section.
+------------------------------------------------- */
+#searchform fieldset {
+  text-align: left;
+  padding: 0;
+  border: none;
+}
+
+#searchform .roundframe {
+  border-radius: 0;
+  margin: 0;
+  padding: 32px;
+}
+
+#searchform .alt {
+  border-top: 0;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+#searchform p.clear {
+  clear: both;
+}
+
+#advanced_search {
+  text-align: center !important;
+}
+
+#advanced_search dl#search_options {
+  margin: 0 auto;
+  width: 600px;
+  padding-top: 12px;
+  overflow: hidden;
+}
+
+#advanced_search dt {
+  padding: 2px;
+  text-align: right;
+  width: 20%;
+}
+
+#advanced_search dd {
+  width: 75%;
+  float: left;
+  padding: 2px;
+  margin: 0 0 0 6px;
+  text-align: left;
+}
+
+#search_results {
+  margin-bottom: 5px;
+}
+
+/* The navigation list (i.e. linktree) */
+.navigate_section {
+  padding: 3px 0 0 0;
+  float: left;
+  width: 100%;
+}
+
+#main_content_section .navigate_section {
+  margin: 4px 0 0 0;
+  padding: 0;
+}
+
+.navigate_section ul {
+  margin: 4px 0 0 0;
+  padding: 0 10px;
+  font-size: 0.9em;
+  overflow: hidden;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.navigate_section ul li {
+  float: left;
+  padding-bottom: 3px;
+  line-height: 1.1em;
+  color: var(--color-default);
+  text-shadow: 0.1px 0.2px 0 var(--color-base);
+}
+
+.navigate_section ul li a, .navigate_section ul li em {
+  padding: 4px 0 4px;
+  margin-top: -4px;
+  display: inline-block;
+}
+
+.navigate_section ul li span {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.navigate_section ul li .dividers {
+  color: var(--color-default);
+  font: 83.33%/150% Arial, sans-serif;
+  padding: 0 2px 0 6px;
+}
+
+.navigate_section ul li .board_moderators a {
+  padding: 4px 0;
+}
+
+.navigate_section a:hover span {
+  text-decoration: underline;
+}
+
+/* "Unread posts" and "New replies" links, accessible with header collapsed. */
+.navigate_section .unread_links {
+  float: right;
+}
+
+.navigate_section .unread_links a {
+  padding: 4px 0 4px 10px;
+  margin-top: 4px;
+}
+
+/* The "new" button */
+.new_posts {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  padding: 0 4px;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color-primary)), to(var(--color-primary-satur)));
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-satur));
+  color: #fff;
+  font: 9px/15px verdana, sans-serif;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.new_posts:hover, .new_posts:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* KorsanFan SASS loaded */
+#mainarea {
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-secondary-lighte);
+}
+
+#mainsag {
+  background: url(../images/theme/left.gif) 100% 0 repeat-y;
+}
+
+#mainsol {
+  background: url(../images/theme/right.gif) 0 0 repeat-y;
+}
+
+#header_korsanfan {
+  background: url(../images/theme/xxycatbg.jpg) repeat-x;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#logo {
+  width: 493px;
+  height: 119px;
+  background: url(../images/theme/logo1.gif) no-repeat;
+  display: block;
+}
+
+.header_alt {
+  background: url(../images/theme/header_lower.gif) repeat-x;
+  height: 67px;
+}
+
+.footer_top_korsan {
+  background: url(../images/theme/footer_lower.gif) repeat-x;
+  height: 22px;
+}
+
+#footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../images/theme/xxycatbg.jpg);
+}
+
+#footer > div {
+  min-width: 80%;
+}
+
+#footer::before, #footer::after {
+  content: "";
+  width: 70px;
+  height: 49px;
+  display: block;
+}
+
+#footer::before {
+  background: url(../images/theme/footer_treasure.gif) no-repeat;
+}
+
+#footer::after {
+  background: url(../images/theme/footer_treasure.gif) no-repeat;
+}
+
+#footer strong {
+  color: var(--color-default-lighte);
+}
+
+#top_section {
+  background: var(--color-default) url(../images/theme/xxycatbg.jpg);
+}
+
+#main_menu {
+  background: url(../images/theme/menu_center_part.gif) repeat-x;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 30px;
+}
+
+#main_menu::before, #main_menu::after {
+  content: "";
+  width: 19px;
+  height: 30px;
+  display: block;
+}
+
+#main_menu::before {
+  background: url(../images/theme/menu_left_end.gif);
+}
+
+#main_menu::after {
+  background: url(../images/theme/menu_right_end.gif);
+}
+
+.profile_korsano {
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile_korsano h4 {
+  background: url(../images/theme/pprofile_bag.gif) no-repeat;
+  padding-left: 15px;
+  height: 22px;
+}
+
+.profile_sag {
+  background: url(../images/theme/pprofile_left.gif) 100% 0 repeat-y;
+}
+
+.profile_sol {
+  background: url(../images/theme/pprofile_right.gif) 0 0 repeat-y;
+}
+
+.profile_top {
+  background: url(../images/theme/pprofile_top.gif) no-repeat;
+  height: 25px;
+}
+
+.profile_bottom {
+  background: url(../images/theme/pprofile_bottom.gif) no-repeat;
+  height: 21px;
+  margin-top: -3px;
+}
+
+.poster {
+  width: 150px;
+}
+
+.title_bar, h3.titlebg, h4.titlebg, .titlebg, h3.subbg, h4.subbg, .subbg {
+  background-image: url(../images/theme/xxycatbg.jpg);
+}
+
+div.cat_bar,
+.generic_list_wrapper, .windowbg, .approvebg, .approvebg2 {
+  background-image: url(../images/theme/catbg.jpg);
+}
+
+#description_board {
+  color: var(--color-default);
+}
+
+#description_board h3, #description_board div {
+  color: var(--color-default-satur);
+}
+
+.welcome {
+  color: var(--color-default);
+}
+
+.welcome strong {
+  color: var(--color-primary);
+}
+
+#display_head p {
+  color: var(--color-base);
+}
+
+/* Those collapse and expand icons are wonderful. */
+.toggle_up::before, .toggle_down::before {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background: var(--color-primary) url(../images/icons/toggle.png) no-repeat 0 0/17px;
+  overflow: hidden;
+  content: "";
+  vertical-align: middle;
+  margin: 0 5px 0 5px;
+  border: 1px solid var(--color-primary-satur);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px var(--color-primary-satur), 0 1px 1px var(--color-secondary) inset, 0 -5px 4px var(--color-primary-satur) inset;
+          box-shadow: 0 1px 2px var(--color-primary-satur), 0 1px 1px var(--color-secondary) inset, 0 -5px 4px var(--color-primary-satur) inset;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.toggle_down::before {
+  background-position: 0 -17px;
+}
+
+.toggle_up:hover:before, .toggle_down:hover:before {
+  background-color: var(--color-default);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+input, button, select, textarea {
+  color: #222;
+  font: 83.33%/150% "Segoe UI", "Helvetica Neue", "Nimbus Sans L", Arial, "Liberation Sans", sans-serif;
+  background: var(--color-default-satur);
+  outline: none;
+  border: 1px solid var(--color-default);
+  vertical-align: middle;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 2px 1px var(--color-default-lighte) inset;
+          box-shadow: 1px 2px 1px var(--color-default-lighte) inset;
+  padding: 0.3em 0.4em;
+}
+
+input:hover, textarea:hover, button:hover, select:hover {
+  outline: none;
+  border-color: var(--color-primary);
+}
+/*# sourceMappingURL=index.css.map */

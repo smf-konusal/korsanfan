@@ -1,0 +1,75 @@
+@function colorhue($color: red){
+    $colour-hue : hue($color);
+    $colour-saturation : saturation($color);
+    $colour-lightness : lightness($color);
+
+    @return 'hsl('$colour-hue, $colour-saturation, $colour-lightness')';
+}
+
+
+@mixin defineColorHSL($color, $renk){
+    $hue : hue($renk);
+    $saturation : saturation($renk);
+    $lightness : lightness($renk);
+    #{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+    #{$color}: unquote("hsl(#{var(#{$color}-h)}, #{var(#{$color}-s)}, #{var(#{$color}-l)})");
+}
+
+@mixin defineColorHSL_dark($color, $renk){
+  $hue : hue($renk);
+  $saturation : saturation($renk);
+  $lightness : lightness($renk)-15;
+  #{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+  #{$color}: unquote("hsl(#{var(#{$color}-h)}, #{var(#{$color}-s)}, #{var(#{$color}-l)})");
+}
+
+@function lighte($color, $lightnessMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
+}
+@function satur($color, $saturationMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
+}
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+
+@mixin grident($renk1, $renk2){
+  background: -moz-linear-gradient(top, $renk1, $renk2);
+  background: -webkit-linear-gradient(top, $renk1, $renk2); 
+  background: linear-gradient(to bottom, $renk1, $renk2);
+}
+@mixin boxx-shadow($shadow){
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+@mixin transition($transition){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
